@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tabs input:nth-of-type(2) {
+  width: 200px !important;
+}
+
+.tab:checked {
+  font-weight: bold;
+}
+
+.p-10 {
+  padding: 2rem 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-cart:hover .dropdown-cart-menu {
+  display: block !important;
+}

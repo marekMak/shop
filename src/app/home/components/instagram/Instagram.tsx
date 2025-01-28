@@ -7,7 +7,7 @@ const Instagram = () => {
       <div className="flex justify-center">
         <Heading title="Our Instagram Stories" />
       </div>
-      <div className="flex justify-center items-center justify-center gap-8 py-10">
+      <div className="flex items-center gap-8 py-10">
         <InstagramCard pic="first" />
         <InstagramCard pic="second" />
         <InstagramCard pic="third" />

@@ -5,6 +5,7 @@ import { MdPhoneInTalk } from "react-icons/md";
 import { MdOutlinePlace } from "react-icons/md";
 import WhiteLogo from "../WhiteLogo";
 import Copyright from "./Copyright";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -24,7 +25,7 @@ const Footer = () => {
         </div>
         <div className="text-white text-sm flex flex-col gap-4 pr-4">
           <h1 className="font-bold">Information</h1>
-          <p>My Account</p>
+          <Link href="/profile">My Account</Link>
           <p>Login</p>
           <p>My Cart</p>
           <p>My Wishlist</p>
@@ -32,7 +33,7 @@ const Footer = () => {
         </div>
         <div className="text-white text-sm flex flex-col gap-4 pr-4">
           <h1 className="font-bold">Service</h1>
-          <p>About Us</p>
+          <Link href="/our-story">About Us</Link>
           <p>Careers</p>
           <p>Delivery Information</p>
           <p>Privacy Policy</p>

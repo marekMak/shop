@@ -3,6 +3,12 @@ import Link from "next/link";
 import Logo from "./Logo";
 import Logout from "./Logout";
 
+import useCartStore from "@/store/cartStore";
+
+import { RxCaretDown } from "react-icons/rx";
+import Cart from "./Cart";
+import Subheader from "./Subheader";
+import ShowItems from "./cart/ShowItems";
 export default async function Header() {
   const supabase = await createClient();
   const {
@@ -21,30 +27,51 @@ export default async function Header() {
           >
             Home
           </Link>
-          <li className="delay-150 transition-colors hover:text-grey cursor-pointer">
-            Shop
-          </li>
-          <li className="delay-150 transition-colors hover:text-grey cursor-pointer">
+          <div className="dropdown relative">
+            <Link
+              href="/shop"
+              className="delay-150 transition-colors hover:text-grey cursor-pointer flex items-center"
+            >
+              Shop <RxCaretDown />
+            </Link>
+            <Subheader />
+          </div>
+          <Link
+            href="/our-story"
+            className="delay-150 transition-colors hover:text-grey cursor-pointer"
+          >
             Our Story
-          </li>
+          </Link>
           <Link
             href="/blog"
             className="delay-150 transition-colors hover:text-grey cursor-pointer"
           >
             Blog
           </Link>
-          <li className="delay-150 transition-colors hover:text-grey cursor-pointer">
+          <Link
+            href="/contact"
+            className="delay-150 transition-colors hover:text-grey cursor-pointer"
+          >
             Contact Us
-          </li>
+          </Link>
         </ul>
       </div>
-      <div className="text-baseBlack flex gap-4 items-center text-2xl font-bold">
+      <div className="text-baseBlack flex gap-4 items-center text-2xl font-bold relative dropdown-cart">
+        <Cart />
+        <ul className="flex">
+          <li className="cursor-pointer">
+            <ShowItems />
+          </li>
+        </ul>
+
         {user ? (
           <div className="flex items-center gap-2">
-            <span className="text-sm text-grey">
-              Hello, {user.user_metadata.firstname}{" "}
-              {user.user_metadata.lastname}
-            </span>
+            <Link href="/profile">
+              <span className="text-sm text-grey">
+                Hello, {user.user_metadata.firstname}{" "}
+                {user.user_metadata.lastname}
+              </span>
+            </Link>
 
             <Logout />
           </div>

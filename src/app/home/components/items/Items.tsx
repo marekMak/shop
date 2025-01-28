@@ -5,7 +5,7 @@ import { BsCreditCard2Back } from "react-icons/bs";
 const Items = () => {
   return (
     <div className="px-10 md:px-60 w-[90%] mx-auto min-h-36 py-10 ">
-      <div className="flex items-center justify-between">
+      <div className="flex gap-8">
         <div className="flex flex-col">
           <div className="text-2xl mb-2">
             <BsBoxSeam />
