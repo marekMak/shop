@@ -18,9 +18,6 @@ export default async function HomePage() {
     data: { user },
     error,
   } = await supabase.auth.getUser();
-  if (error || !user) {
-    redirect("/login");
-  }
 
   return (
     <div className="flex flex-col w-full">
