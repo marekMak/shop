@@ -2,6 +2,8 @@
 
 import { GoTrash } from "react-icons/go";
 import useCartStore from "@/store/cartStore";
+import Image from "next/image";
+import { formatPrice } from "@/utils/utils";
 const Table = () => {
   const { cart, removeFromCart } = useCartStore((state) => state);
   return (
@@ -23,17 +25,25 @@ const Table = () => {
             </thead>
             <tbody>
               {cart.map((product) => (
-                <tr>
-                  <th className="grid grid-cols-2">
-                    <div>1</div>
+                <tr key={product.id}>
+                  <th className="flex">
+                    <div className="relative w-20">
+                      <Image
+                        src={product.imageUrl}
+                        alt={product.title}
+                        layout="fill"
+                        objectFit="contain"
+                        className="left-0 max-w-20"
+                      />
+                    </div>
                     <div className="flex flex-col">
-                      <h1>{product.title}</h1>
+                      <h1>{product.subtitle}</h1>
                       <p className="font-light">Size:S</p>
                     </div>
                   </th>
-                  <td>${product.price.toFixed(2)}</td>
+                  <td>{formatPrice(product.price)}</td>
                   <td>{product.quantity}</td>
-                  <td>${(product.price * product.quantity).toFixed(2)}</td>
+                  <td>{formatPrice(product.price * product.quantity)}</td>
                   <td>
                     <button className=" bg-white text-red-400 py-2 px-4 rounded-sm">
                       <GoTrash />

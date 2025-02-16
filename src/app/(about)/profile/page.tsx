@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import { createClient } from "@/utils/supabase/server";
-import Heading from "@/components/Heading";
+import Heading from "@/components/header/Heading";
 import Sidebar from "./components/Sidebar";
 import BaseLayout from "@/components/layout/BaseLayout";
 

@@ -1,4 +1,4 @@
-interface CustomerCardProps {
+interface ReviewCardProps {
   name: string;
   text: string;
   role: string;
@@ -6,7 +6,7 @@ interface CustomerCardProps {
 
 import { FaStar } from "react-icons/fa";
 
-const CustomerCard = ({ name, text, role }: CustomerCardProps) => {
+const ReviewCard = ({ name, text, role }: ReviewCardProps) => {
   return (
     <div className="bg-white shadow w-72 h-56 flex flex-col py-2 px-4 gap-2 justify-center">
       <div className="flex gap-1 text-yellow-400">
@@ -28,4 +28,4 @@ const CustomerCard = ({ name, text, role }: CustomerCardProps) => {
   );
 };
 
-export default CustomerCard;
+export default ReviewCard;

@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Heading from "@/components/Heading";
+import Header from "@/components/header/Header";
+import Heading from "@/components/header/Heading";
 import React from "react";
 
 const page = () => {

@@ -1,6 +1,9 @@
-import React from "react";
+interface TabProps {
+  description: string;
+  additionalInformation: string;
+}
 
-const Tab = () => {
+const Tab = ({ description, additionalInformation }: TabProps) => {
   return (
     <div role="tablist" className="tabs tabs-bordered">
       <input
@@ -11,10 +14,7 @@ const Tab = () => {
         aria-label="Description"
       />
       <div role="tabpanel" className="tab-content p-10">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos itaque
-        odio nesciunt maiores quis provident aut. Deserunt numquam nemo magni
-        facere animi voluptatem, accusantium asperiores laboriosam pariatur
-        placeat sapiente veniam!
+        {description}
       </div>
 
       <input
@@ -26,11 +26,7 @@ const Tab = () => {
         defaultChecked
       />
       <div role="tabpanel" className="tab-content p-10">
-        Lorem Additional Information ipsum dolor sit amet consectetur
-        adipisicing elit. Cumque quod, magnam laudantium earum doloribus
-        repudiandae quasi. Ex mollitia debitis distinctio, vitae consequatur,
-        quisquam, molestiae consectetur ipsam aut repellendus expedita
-        perferendis?
+        {additionalInformation}
       </div>
 
       <input

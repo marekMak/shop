@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import Categories from "./components/Categories";
 
 import { RxCaretDown } from "react-icons/rx";
@@ -64,7 +64,7 @@ const Shop = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 py-8">
+            <div className="w-full grid grid-cols-3 gap-8">
               <Products />
             </div>
           </main>

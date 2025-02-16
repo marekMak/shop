@@ -9,7 +9,7 @@ type Post = {
 
 import { useEffect, useState } from "react";
 import { fetchPosts } from "@/utils/supabase/actions";
-import Heading from "@/components/Heading";
+import Heading from "@/components/header/Heading";
 import { formatDate } from "@/utils/utils";
 
 const Post = () => {

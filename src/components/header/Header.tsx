@@ -1,14 +1,14 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import Logo from "./Logo";
+import Logo from "../logo/Logo";
 import Logout from "./Logout";
 
 import useCartStore from "@/store/cartStore";
 
 import { RxCaretDown } from "react-icons/rx";
-import Cart from "./Cart";
+import Cart from "../cart/Cart";
 import Subheader from "./Subheader";
-import ShowItems from "./cart/ShowItems";
+import ShowItems from "../cart/ShowItems";
 export default async function Header() {
   const supabase = await createClient();
   const {
@@ -56,13 +56,15 @@ export default async function Header() {
           </Link>
         </ul>
       </div>
-      <div className="text-baseBlack flex gap-4 items-center text-2xl font-bold relative dropdown-cart">
-        <Cart />
-        <ul className="flex">
-          <li className="cursor-pointer">
-            <ShowItems />
-          </li>
-        </ul>
+      <div className="text-baseBlack flex gap-4 items-center text-2xl font-bold ">
+        <div className="relative dropdown-cart py-1">
+          <Cart />
+          <ul className="flex">
+            <li className="cursor-pointer">
+              <ShowItems />
+            </li>
+          </ul>
+        </div>
 
         {user ? (
           <div className="flex items-center gap-2">

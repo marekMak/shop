@@ -111,6 +111,21 @@ export async function fetchProducts() {
   return { success: true, message: "Products found", data };
 }
 
+export async function fetchProduct(id: number) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("products")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    return { success: false, message: "Products not found", data: [] };
+  }
+  return { success: true, message: "Products found", data };
+}
+
 export async function fetchPosts() {
   const supabase = await createClient();
 
@@ -167,4 +182,18 @@ export async function fetchStates() {
     return { success: false, message: "Sizes not found", data: [] };
   }
   return { success: true, message: "Sizes found", data };
+}
+
+export async function checkDiscount(code: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("discounts")
+    .select("*")
+    .eq("discount_title", code)
+    .single();
+  if (error) {
+    return { success: false, message: "Discount not found", data: null };
+  }
+  return { success: true, message: "Discount found", data };
 }

@@ -1,15 +1,15 @@
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import Button from "@/components/button";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Best from "@/components/Best";
+
 import Image from "next/image";
 import Categories from "./home/components/categories/Categories";
 import Deals from "./home/components/deals/Deals";
-import Customers from "./home/components/customer/Customers";
+import Reviews from "./home/components/reviews/Reviews";
 import Instagram from "./home/components/instagram/Instagram";
-import Items from "./home/components/items/Items";
+import Conditions from "./home/components/conditions/Conditions";
 
 export default async function HomePage() {
   const supabase = await createClient();
@@ -48,14 +48,16 @@ export default async function HomePage() {
               />
             </div>
           </div>
-          <Best />
+          <div className="absolute -bottom-[5%] left-[10%] text-[15rem] text-white font-bold uppercase z-0">
+            Best
+          </div>
         </div>
       </div>
       <Categories />
       <Deals />
-      <Customers />
+      <Reviews />
       <Instagram />
-      <Items />
+      <Conditions />
     </div>
   );
 }

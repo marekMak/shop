@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Heading from "@/components/Heading";
+import Heading from "@/components/header/Heading";
 import Timer from "./Timer";
 import Button from "@/components/button";
 import { FaArrowRightLong } from "react-icons/fa6";

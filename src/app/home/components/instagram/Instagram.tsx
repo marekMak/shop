@@ -1,4 +1,4 @@
-import Heading from "@/components/Heading";
+import Heading from "@/components/header/Heading";
 import InstagramCard from "./components/InstagramCard";
 
 const Instagram = () => {

@@ -5,8 +5,9 @@ type Product = {
   product_subtitle: string;
   product_price: number;
   product_old_price: number;
+  product_image_url: string;
+  product_in_stock: boolean;
 };
-
 import { useEffect, useState } from "react";
 import { fetchProducts } from "@/utils/supabase/actions";
 import ShopCard from "./ShopCard";
@@ -27,7 +28,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {products.map((product) => (
         <ShopCard
           key={product.id}
@@ -36,9 +37,11 @@ const Products = () => {
           subtitle={product.product_subtitle}
           price={product.product_price}
           oldPrice={product.product_old_price}
+          imageUrl={product.product_image_url}
+          in_stock={product.product_in_stock}
         />
       ))}
-    </div>
+    </>
   );
 };
 

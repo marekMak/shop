@@ -33,7 +33,10 @@ const useCartStore = create<CartState>((set, get) => ({
       set({
         cart: cart.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + product.quantity }
+            ? {
+                ...item,
+                quantity: item.quantity + product.quantity,
+              }
             : item
         ),
       });

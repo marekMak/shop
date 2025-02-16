@@ -1,4 +1,4 @@
-import Heading from "@/components/Heading";
+import Heading from "@/components/header/Heading";
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";

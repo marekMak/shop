@@ -15,6 +15,13 @@ import { fetchAddresses, deleteAddress } from "@/utils/supabase/actions";
 import { useState, useEffect } from "react";
 const SelectAddress = () => {
   const [addresses, setAddresses] = useState<Address[]>([]);
+  const [selectedAddressId, setSelectedAddressId] = useState<number | null>(
+    null
+  );
+  const handleSelectAddress = (id: number) => {
+    setSelectedAddressId((prevSelected) => (prevSelected === id ? null : id));
+    console.log(selectedAddressId);
+  };
   const loadAddresses = async () => {
     const response = await fetchAddresses();
     if (response.success) {
@@ -46,8 +53,15 @@ const SelectAddress = () => {
       {addresses.map((address) => (
         <div
           key={address.id}
-          className="bg-grey-light rounded-md px-2 py-2 w-60 flex flex-col"
+          className="bg-grey-light rounded-md px-2 py-2 w-60 flex flex-col relative"
         >
+          <input
+            type="radio"
+            id={`address-${address.id}`}
+            className="absolute top-2 right-2"
+            checked={selectedAddressId === address.id}
+            onChange={() => handleSelectAddress(address.id)}
+          />
           <h1 className="font-bold mb-2">{address.address_name}</h1>
           <p>
             {address.address_street} {address.address_house_number}

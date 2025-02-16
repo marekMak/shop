@@ -3,7 +3,7 @@ import React from "react";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { MdPhoneInTalk } from "react-icons/md";
 import { MdOutlinePlace } from "react-icons/md";
-import WhiteLogo from "../WhiteLogo";
+import WhiteLogo from "../logo/WhiteLogo";
 import Copyright from "./Copyright";
 import Link from "next/link";
 

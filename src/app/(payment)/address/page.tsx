@@ -1,10 +1,9 @@
-import Header from "@/components/Header";
-import Heading from "@/components/Heading";
+import Heading from "@/components/header/Heading";
 import React from "react";
 import ProgressItem from "./components/ProgressItem";
 import Button from "@/components/button";
 import Input from "@/components/input";
-import Subtotal from "../checkout/components/Subtotal";
+import Subtotal from "@/app/checkout/components/Subtotal";
 import SelectAddress from "./components/SelectAddress";
 import AddressForm from "./components/AddressForm";
 

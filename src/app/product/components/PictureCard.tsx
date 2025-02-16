@@ -1,12 +1,15 @@
-import Image from "next/image";
-import React from "react";
+interface PictureCardProps {
+  imageUrl: string;
+}
 
-const PictureCard = () => {
+import Image from "next/image";
+
+const PictureCard = ({ imageUrl }: PictureCardProps) => {
   return (
     <div className="bg-grey-light p-2 flex flex-col justify-center items-center">
       <div className="w-20 h-20 flex  relative">
         <Image
-          src={`/images/product/babyDress.png`}
+          src={imageUrl}
           alt="Stylish woman with read coat and a hat"
           fill
           className="relative object-cover"

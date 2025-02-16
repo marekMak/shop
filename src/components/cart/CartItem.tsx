@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { GoTrash } from "react-icons/go";
 import useCartStore from "@/store/cartStore";
+import Image from "next/image";
 
 const CartItem = () => {
   const { cart, removeFromCart } = useCartStore((state) => state);
@@ -26,7 +27,15 @@ const CartItem = () => {
           {cart.map((product) => (
             <div key={product.id} className="flex flex-col relative py-4 px-2">
               <div className="flex relative">
-                <div className="w-24">{product.quantity}</div>
+                <div className="w-24 relative">
+                  <Image
+                    src={product.imageUrl}
+                    alt={product.title}
+                    layout="fill"
+                    objectFit="contain"
+                    className="p-2"
+                  />
+                </div>
                 <div className="flex flex-col text-sm gap-1 pb-4 pl-2">
                   <h4 className="font-light">{product.subtitle}</h4>
                   <h5>

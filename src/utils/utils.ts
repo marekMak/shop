@@ -25,3 +25,10 @@ export function formatDate(input: string) {
 
   return `${day}.${month}.${year} ${hours}:${minutes}`;
 }
+
+export function formatPrice(price: number | undefined) {
+  if (price === undefined) {
+    return "$0.00"; // Predvolená hodnota pre neznámu cenu
+  }
+  return `$${price.toFixed(2)}`;
+}

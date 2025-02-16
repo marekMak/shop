@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Heading from "@/components/Heading";
+import Header from "@/components/header/Header";
+import Heading from "@/components/header/Heading";
 import React from "react";
 import Table from "./components/Table";
 import Subtotal from "./components/Subtotal";
